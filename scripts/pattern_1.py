@@ -14,11 +14,16 @@ def cb(message):
     #print(message)
     if message.data == 1 and n == 1:
         print('\033[42m' + "こんにちは。すみません。ちょっといいですかね。" + '\033[0m')
-        playsound("sound/konnitiha.wav")
+        playsound("sound/aisatu.wav")
         print('\033[42m' + "危ないものないと思うんですが一応持ち物確認させてください。" + '\033[0m')
+        playsound("sound/syoudaku.wav")
         print('\033[42m' + "ここ失礼しますね。" + '\033[0m')
+        playsound("sound/mate.wav")
         print('\033[42m' + "これは何ですかね。お兄さんわかるでしょ" + '\033[0m')
+        playsound("sound/wakaran.wav")
         print('\033[42m' + "これお兄さんのだよね？" + '\033[0m')
+        playsound("sound/tigau.wav")
+        print("終了....")
         n = 0
 
 if n == 1:

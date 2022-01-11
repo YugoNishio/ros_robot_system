@@ -1,17 +1,17 @@
 #! /usr/bin/env python
 # -*- coding: utf-8 -*-
 
-import re
 import rospy
 import cv2
 from sensor_msgs.msg import Image
 from cv_bridge import CvBridge, CvBridgeError
-from playsound import playsound
+from std_msgs.msg import Int32
 
 class ImageConvert(object):
     def __init__(self):
         self.bridge = CvBridge()
         self.subscribed_image_color = rospy.Subscriber("image_raw", Image, self.color_callback_and_convert)
+        self.publisher_answer_1 = rospy.Publisher("answer_1", Int32, queue_size=10)
 
     def main(self):
         try:
@@ -26,7 +26,7 @@ class ImageConvert(object):
         except CvBridgeError as e:
             print(e)
 
-        cascade_path = "/home/yugonishio/catkin_ws/src/ros_robot_system/scripts/haarcascade_frontalface_default.xml"        
+        cascade_path = "haarcascade_frontalface_default.xml"        
         image_gray = cv2.cvtColor(cv_image_color, cv2.COLOR_BGR2GRAY)
         cascade = cv2.CascadeClassifier(cascade_path)
         facerect = cascade.detectMultiScale(image_gray, scaleFactor=1.1, minNeighbors=2, minSize=(30, 30))
@@ -36,12 +36,11 @@ class ImageConvert(object):
                 cv2.rectangle(cv_image_color, tuple(rect[0:2]),tuple(rect[0:2]+rect[2:4]), color, thickness=2)
         
         print(rect[0], rect[1], rect[2], rect[3])
-
         dst_area = self.mosaic_area(cv_image_color, rect[0], rect[1], rect[2], rect[3])
+
+        self.publisher_answer_1.publish(1)
         
-        #cv_image_color = dst_area + cv_image_color
         cv2.imshow("image", dst_area)
-                #cv2.imshow("cv_image", cv_image_color)
         cv2.waitKey(3)
 
     def mosaic(self, src, ratio):
@@ -55,6 +54,5 @@ class ImageConvert(object):
 
 if __name__ == "__main__":
     rospy.init_node("vision")
-    playsound("konnitiha.wav")    
     image_convert = ImageConvert()
     image_convert.main()
