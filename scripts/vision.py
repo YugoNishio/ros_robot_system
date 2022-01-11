@@ -12,10 +12,6 @@ class ImageConvert(object):
     def __init__(self):
         self.bridge = CvBridge()
         self.subscribed_image_color = rospy.Subscriber("image_raw", Image, self.color_callback_and_convert)
-        self.publisher_face_image_x = rospy.Publisher("image_face_x", Float32)
-        self.publisher_face_image_y = rospy.Publisher("image_face_y", Float32)
-        self.publisher_face_image_width = rospy.Publisher("image_face_width", Float32)
-        self.publisher_face_image_height = rospy.Publisher("image_face_height", Float32)
 
     def main(self):
         try:
@@ -40,14 +36,22 @@ class ImageConvert(object):
                 cv2.rectangle(cv_image_color, tuple(rect[0:2]),tuple(rect[0:2]+rect[2:4]), color, thickness=2)
         
         print(rect[0], rect[1], rect[2], rect[3])
-        self.publisher_face_image_x.publish(rect[0])
-        self.publisher_face_image_y.publish(rect[1])
-        self.publisher_face_image_width.publish(rect[2])
-        self.publisher_face_image_height.publish(rect[3])
+
+        dst_area = self.mosaic_area(cv_image_color, rect[0], rect[1], rect[2], rect[3])
         
-        cv2.imshow("image", cv_image_color)
+        #cv_image_color = dst_area + cv_image_color
+        cv2.imshow("image", dst_area)
                 #cv2.imshow("cv_image", cv_image_color)
         cv2.waitKey(3)
+
+    def mosaic(self, src, ratio):
+        small = cv2.resize(src, None, fx=ratio, fy=ratio, interpolation=cv2.INTER_NEAREST)
+        return cv2.resize(small, src.shape[:2][::-1], interpolation=cv2.INTER_NEAREST)
+
+    def mosaic_area(self, src, x, y, width, height, ratio=0.05):
+        dst = src.copy()
+        dst[y:y + height, x:x + width] = self.mosaic(dst[y:y + height, x:x + width], ratio)
+        return dst
 
 if __name__ == "__main__":
     rospy.init_node("vision")
