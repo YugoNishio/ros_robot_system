@@ -6,7 +6,7 @@ import rospy
 import cv2
 from sensor_msgs.msg import Image
 from cv_bridge import CvBridge, CvBridgeError
-from std_msgs.msg import Float32
+from playsound import playsound
 
 class ImageConvert(object):
     def __init__(self):
@@ -55,5 +55,6 @@ class ImageConvert(object):
 
 if __name__ == "__main__":
     rospy.init_node("vision")
+    playsound("konnitiha.wav")    
     image_convert = ImageConvert()
     image_convert.main()
