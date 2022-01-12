@@ -1,8 +1,8 @@
 # ros_robot_system
 
 誰でも怪しい人になれるROSパッケージです。
-個人情報保護のため、顔にモザイクがかかるようにしています。
-ボイスチェンジャーはiOS版「Voice Plus」を使用しています。
+個人情報保護のため、顔にモザイクがかかるようにしています。  
+ボイスチェンジャーはiOS版「Voice Plus」を使用しています。なお、音源はYugoNishioの声です。
 
 本パッケージは[千葉工業大学のロボットシステム学第10回講義](https://github.com/ryuichiueda/robosys2020/blob/master/md/ros.md)を元に作成しています。
 
