@@ -26,7 +26,7 @@ class ImageConvert(object):
         except CvBridgeError as e:
             print(e)
 
-        cascade_path = "haarcascade_frontalface_default.xml"        
+        cascade_path = "/home/yugonishio/catkin_ws/src/ros_robot_system/scripts/haarcascade_frontalface_default.xml"        
         image_gray = cv2.cvtColor(cv_image_color, cv2.COLOR_BGR2GRAY)
         cascade = cv2.CascadeClassifier(cascade_path)
         facerect = cascade.detectMultiScale(image_gray, scaleFactor=1.1, minNeighbors=2, minSize=(30, 30))
@@ -35,7 +35,7 @@ class ImageConvert(object):
             for rect in facerect:
                 cv2.rectangle(cv_image_color, tuple(rect[0:2]),tuple(rect[0:2]+rect[2:4]), color, thickness=2)
         
-        print(rect[0], rect[1], rect[2], rect[3])
+        print("x:",rect[0]," y:", rect[1], " width: ",rect[2], " height:",rect[3])
         dst_area = self.mosaic_area(cv_image_color, rect[0], rect[1], rect[2], rect[3])
 
         self.publisher_answer_1.publish(1)
