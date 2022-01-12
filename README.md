@@ -1,7 +1,8 @@
 # ros_robot_system
 
 誰でも怪しい人になれるROSパッケージです。
-個人情報保護のため、モザイクとボイスチェンジャーを使用しています。
+個人情報保護のため、顔にモザイクがかかるようにしています。
+ボイスチェンジャーはiOS版「Voice Plus」を使用しています。
 
 本パッケージは[千葉工業大学のロボットシステム学第10回講義](https://github.com/ryuichiueda/robosys2020/blob/master/md/ros.md)を元に作成しています。
 
@@ -47,9 +48,12 @@ webカメラの接続確認
 ```  
 $ cheese
 ```  
-パス修正
+パス修正  
 本パッケージでは一部コードにファイル階層を指定しています。
-使用する際はユーザーに合う階層を指定してください。
+使用する際はユーザーに合う階層を指定してください。  
+
+音声変更  
+流れる音声を変更することで、ご自由に不審者を演じることが出来ます。
 
 ---
 ### 使用方法
@@ -82,10 +86,3 @@ $ rosrun ros_robot_system pattern_1.py
 - ROS [BSD 3-Clause License](https://github.com/YugoNishio/ros_robot_system/blob/main/LICENSE)
 - OpenCV [Apache License 2.0](https://github.com/opencv/opencv/blob/4.x/LICENSE)
 - playsound [MIT License]
-- v4l-utils
-    - [GNU GENERAL PUBLIC LICENSE 2](https://github.com/gjasny/v4l-utils/blob/master/COPYING)
-    - [GNU LESSER GENERAL PUBLIC LICENSE 2.1](https://github.com/gjasny/v4l-utils/blob/master/COPYING.libdvbv5)
-    - [GNU LESSER GENERAL PUBLIC LICENSE 2.1](https://github.com/gjasny/v4l-utils/blob/master/COPYING.libv4l)
-- cheese
-    - [GNU GENERAL PUBLIC LICENSE 2](https://github.com/cfoch/cheese/blob/faceoverlay/COPYING)
-    - [GNU GENERAL PUBLIC LICENSE 3](https://github.com/cfoch/cheese/blob/faceoverlay/COPYING.GPL3)
