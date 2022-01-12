@@ -68,10 +68,15 @@ $ rosrun ros_robot_system pattern_1.py
 ```  
 
 ---
+### 実際の様子
+[https://studio.youtube.com/video/OapkfbCmNCY/edit]
+[![サムネ](https://user-images.githubusercontent.com/71488443/149156044-728c68f0-72fb-49db-a9d0-051967aee3d7.png)](https://www.youtube.com/watch?v=OapkfbCmNCY)
+
+
+---
 ### 参考にしたサイト
-[ROSでWebカメラの画像を表示](http://joe.ash.jp/program/ros/tutorial/tutorial_camera.htm)閲覧日2022/1/11
-[Python,OpenCVで画像にモザイク処理(全面、一部、顔など)](https://note.nkmk.me/python-opencv-mosaic/)閲覧日2022/1/11
-[Python 顔認証など画像処理するOpenCVのインストール方法](https://hk29.hatenablog.jp/entry/2019/10/13/013741)
+[ROSでWebカメラの画像を表示](http://joe.ash.jp/program/ros/tutorial/tutorial_camera.htm)閲覧日2022/1/11  
+[Python,OpenCVで画像にモザイク処理(全面、一部、顔など)](https://note.nkmk.me/python-opencv-mosaic/)閲覧日2022/1/11  
 
 ### ライセンス
 - ROS [BSD 3-Clause License](https://github.com/YugoNishio/ros_robot_system/blob/main/LICENSE)
