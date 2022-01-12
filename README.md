@@ -11,6 +11,7 @@
 - Ubuntu 18.04.6 LTS
 - ROS Melodic
 - OpneCV 4.5.1
+- playsound 1.3.0
 
 ---
 ### セットアップ方法
@@ -67,3 +68,19 @@ $ rosrun ros_robot_system pattern_1.py
 ```  
 
 ---
+### 参考にしたサイト
+[ROSでWebカメラの画像を表示](http://joe.ash.jp/program/ros/tutorial/tutorial_camera.htm)閲覧日2022/1/11
+[Python,OpenCVで画像にモザイク処理(全面、一部、顔など)](https://note.nkmk.me/python-opencv-mosaic/)閲覧日2022/1/11
+[Python 顔認証など画像処理するOpenCVのインストール方法](https://hk29.hatenablog.jp/entry/2019/10/13/013741)
+
+### ライセンス
+- ROS [BSD 3-Clause License](https://github.com/YugoNishio/ros_robot_system/blob/main/LICENSE)
+- OpenCV [Apache License 2.0](https://github.com/opencv/opencv/blob/4.x/LICENSE)
+- playsound [MIT License]
+- v4l-utils
+    - [GNU GENERAL PUBLIC LICENSE 2](https://github.com/gjasny/v4l-utils/blob/master/COPYING)
+    - [GNU LESSER GENERAL PUBLIC LICENSE 2.1](https://github.com/gjasny/v4l-utils/blob/master/COPYING.libdvbv5)
+    - [GNU LESSER GENERAL PUBLIC LICENSE 2.1](https://github.com/gjasny/v4l-utils/blob/master/COPYING.libv4l)
+- cheese
+    - [GNU GENERAL PUBLIC LICENSE 2](https://github.com/cfoch/cheese/blob/faceoverlay/COPYING)
+    - [GNU GENERAL PUBLIC LICENSE 3](https://github.com/cfoch/cheese/blob/faceoverlay/COPYING.GPL3)
