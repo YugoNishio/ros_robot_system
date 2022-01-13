@@ -82,7 +82,7 @@ $ rosrun ros_robot_system pattern_1.py
 [ROSでWebカメラの画像を表示](http://joe.ash.jp/program/ros/tutorial/tutorial_camera.htm)閲覧日2022/1/11  
 [Python,OpenCVで画像にモザイク処理(全面、一部、顔など)](https://note.nkmk.me/python-opencv-mosaic/)閲覧日2022/1/11  
 
-### ライセンス
-- ROS [BSD 3-Clause License](https://github.com/YugoNishio/ros_robot_system/blob/main/LICENSE)
-- OpenCV [Apache License 2.0](https://github.com/opencv/opencv/blob/4.x/LICENSE)
-- playsound [MIT License]
+---
+### LICENSE
+-  This repository consists of BSD line sense. See [LICENSE](https://github.com/YugoNishio/ros_robot_system/blob/main/LICENSE) for details.
+-  haarcascade_frontalface_default.xml is served by [Intel License Agreement](https://github.com/YugoNishio/ros_robot_system/blob/main/scripts/haarcascade_frontalface_default.xml)
